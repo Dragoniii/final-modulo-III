@@ -1,13 +1,23 @@
 * {
     margin: 0;
     padding: 0;
+    color: grey;
 }
 
 /*
 Header
 */
 header {
-    background-color: #A8E4B1;
+    background-color: #7BD3EA;
+    min-height: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+header h1 {
+    width: 100%; 
+    text-align: center;
 }
 
 form {
@@ -20,23 +30,50 @@ form > input {
     border: none
 }
 
-form > button {
-    background: #DA5C53;
+button {
+    background: #F6D6D6;
     border: none;
-    color: #fff;
     padding: 4px 10px
 }
 /*
 Main
 */
 main {
-    background-color: #4AA3BA;
+    background-color: #A1EEBD;
+}
+
+article h3 {
+color: black;
+}
+
+article {
+    display: flex;
+    width: 400px;
+    align-items: center;
+}
+
+aside {
+    text-align: center;
+}
+
+article figure img {
+    width: 275px; 
+    height: auto; 
+    margin-right: 15px;
+}
+
+#cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
 }
 
 /*
 Footer
 */
 footer {
-    background-color: #306D75;
+    background-color: #F6F7C4;
+    min-height: 20px;
+    text-align: center;
 }
-
