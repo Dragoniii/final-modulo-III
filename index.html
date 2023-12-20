@@ -4,8 +4,50 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Rick and Morty API</title>
+    <script
+      src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
+      defer
+    ></script>
     <script src="src/index.js" defer></script>
-    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/stylesheet.css" />
   </head>
-  <body></body>
+  <body>
+    <header>
+      <h1>The Rick and Morty API</h1>
+
+      <form onsubmit="selecionarPersonagem(event)">
+        <label for="buscador"></label>
+        <input
+          placeholder="Buscar por ID"
+          type="search"
+          name="buscador"
+          id="buscador"
+        />
+        <button type="submit" class="btn">Ok</button>
+      </form>
+    </header>
+    <main>
+      <div id="cards">
+        <p>
+          Antes de mais nada, eu gostaria de agradecer por seu interesse no projeto! 
+        </p>
+        <p>
+          A opção acima busca um único personagem pelo ID do mesmo.
+        </p>
+        <p>
+          As opções abaixo buscam por páginas.
+        </p>
+      </div>
+      <div>
+        <button onclick="carregaPersonagens(1)">Primeira página</button>
+        <button onclick="carregaPersonagens(1)">Página anterior</button>
+        <button onclick="carregaPersonagens(parseInt(Math.random()*45))">Página aleatória</button>
+        <button onclick="carregaPersonagens(1)">Página seguinte</button>
+        <button onclick="carregaPersonagens(42)">Última página</button>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2023 | Atividade desenvolvida por Joel Luís Steffen</p>
+    </footer>
+  </body>
 </html>

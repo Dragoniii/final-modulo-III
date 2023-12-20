@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*
+Header
+*/
+header {
+    background-color: #A8E4B1;
+}
+
+form {
+    border: 2px solid #ccc;
+    display: inline-block;
+    padding: 4px;
+}
+
+form > input {
+    border: none
+}
+
+form > button {
+    background: #DA5C53;
+    border: none;
+    color: #fff;
+    padding: 4px 10px
+}
+/*
+Main
+*/
+main {
+    background-color: #4AA3BA;
+}
+
+/*
+Footer
+*/
+footer {
+    background-color: #306D75;
+}
+
