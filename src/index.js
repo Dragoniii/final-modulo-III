@@ -1,7 +1,7 @@
 const instance = axios.create({
   baseURL: "https://rickandmortyapi.com/api",
 });
-let paginaAtual = Math.ceil(Math.random() * 40 + 1);
+let paginaAtual = Math.ceil(Math.random() * 38 + 2);
 const paginacao = document.getElementById("pagina");
 const cards = document.getElementById("cards");
 const buscador = document.getElementById("buscador");
