@@ -13,40 +13,55 @@
   </head>
   <body>
     <header>
-      <h1>The Rick and Morty API</h1>
-      <div>
-        <form onsubmit="selecionarPersonagem(event)">
-          <label for="buscador"></label>
-          <input
-            placeholder="Character by ID"
-            type="search"
-            name="buscador"
-            id="buscador"
-          />
-          <button type="submit" class="btn">Ok</button>
-        </form>
-        <button onclick="carregaPersonagens(1)">First</button>
-        <button onclick="carregaPersonagens(1)">&lt;</button>
-        <button onclick="carregaPersonagens(parseInt(Math.random()*42)+1)">
-          ?
-        </button>
-        <button onclick="carregaPersonagens(1)">&gt;</button>
-        <button onclick="carregaPersonagens(42)">Last</button>
+      <h1 ><img src="img/img.png" alt="Rick and Morty" onclick="window.location.reload()"> The Rick and Morty API <img src="img/img.png" alt="Rick and Morty" onclick="window.location.reload()"></h1>
+      <form onsubmit="selecionarPersonagem(event)">
+        <label for="buscador"></label>
+        <input
+          placeholder="1 to 826"
+          type="search"
+          name="buscador"
+          id="buscador"
+        />
+        <button type="submit" class="btn">ok</button>
+      </form>
+      <div id="paginas">
+        <button onclick="paginaUm()">first</button>
+        <button onclick="diminuirpagina()">&lt;</button>
+        <button onclick="aumentarpagina()">&gt;</button>
+        <button onclick="paginaFinal()">last</button>
+        <button id="pagina" onclick="carregaPersonagens(paginaAtual)"></button>
+      </div>
+      <div id="aleatorio">
+        <button onclick="aleatorio()"><img src="img/img.png" alt="Rick and Morty"></button>
       </div>
     </header>
 
     <main>
       <div id="cards">
-        <p>
-          Antes de mais nada, eu gostaria de agradecer por seu interesse no
-          projeto!
-        </p>
-        <p>A opção acima busca um único personagem pelo ID do mesmo.</p>
-        <p>As opções abaixo buscam por páginas.</p>
+        <div>
+          <p>
+            First and foremost, I would like to thank you for your interest in
+            the project. <h2>Thank you!</h2>
+          </p>
+          <p>We have 3 search options:</p>
+          <p>
+            In the first option, you can search by the ID of the character you
+            want, which will be displayed followed by the next 3 characters.
+          </p>
+          <p>
+            In the second option, you can start with the first, the last, or an
+            automatically suggested page.
+          </p>
+          <p>In the third option, well, that's a surprise... enjoy.</p>
+          <div><img src="img/img.png" alt="Rick and Morty"></div>
+        </div>
+        <div>
+        </div>
       </div>
     </main>
 
     <footer>
+      <div id="footer"><img src="img/img.png" alt="Rick and Morty"></div>
       <p>&copy; 2023 | By Joel Luís Steffen!</p>
     </footer>
   </body>

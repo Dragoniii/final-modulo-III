@@ -1,18 +1,30 @@
+
+
+
 * {
     margin: 0;
     padding: 0;
-    color: grey;
+    color: #363636	;
+    font-family: 'Rajdhani', sans-serif;
 }
 
 /*
 Header
 */
+
+header img {
+    width: 30px;  /* ajuste conforme necessário */
+    height: auto;  /* mantém a proporção da imagem */
+}
+
 header {
-    background-color: #7BD3EA;
-    min-height: 80px;
+    background-color: #61A3BA;
+    min-height: 160px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    box-shadow: inset 0 0 2em #FFFFDD;
+    padding: 10px;
 }
 
 header h1 {
@@ -24,32 +36,60 @@ form {
     border: 2px solid #ccc;
     display: inline-block;
     padding: 4px;
+    width: 100%; 
+    text-align: center;
+    border: none
 }
 
-form > input {
-    border: none
+#paginas{
+    width: 100%; 
+    text-align: center;
+    margin: 2px;
+}
+
+#aleatorio{
+    width: 100%; 
+    text-align: center;
+    margin: 2px;
 }
 
 button {
     background: #F6D6D6;
     border: none;
-    padding: 4px 10px
+    padding: 4px 10px;
+    border: outset;
 }
 /*
 Main
 */
 main {
-    background-color: #A1EEBD;
+    padding: 15px;
+    background-color: #748E63;
+    min-height: calc(100vh - 320px);
+    box-shadow: inset 0 0 2em #FFFFDD;
+    
 }
 
 article h3 {
 color: black;
 }
 
+main div div {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+}
+
+main div div p{
+    margin-bottom: 20px;
+}
+
 article {
     display: flex;
     width: 400px;
     align-items: center;
+    box-shadow: inset 0 0 2em #FFFFDD;
+    background-color: #A2C579;
 }
 
 aside {
@@ -59,7 +99,8 @@ aside {
 article figure img {
     width: 275px; 
     height: auto; 
-    margin-right: 15px;
+    margin-right: 5px;
+    border: solid;
 }
 
 #cards{
@@ -69,11 +110,23 @@ article figure img {
     width: 100%;
 }
 
+main img {
+    width: 250px;  /* ajuste conforme necessário */
+    height: auto;  /* mantém a proporção da imagem */
+}
+
 /*
 Footer
 */
 footer {
-    background-color: #F6F7C4;
-    min-height: 20px;
+    background-color: #61A3BA;
+    min-height: 100px;
     text-align: center;
+    box-shadow: inset 0 0 2em #FFFFDD;
+    padding: 5px;   
+}
+
+footer img {
+    width: 71px;  /* ajuste conforme necessário */
+    height: auto;  /* mantém a proporção da imagem */
 }
