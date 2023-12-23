@@ -47,7 +47,7 @@ async function selecionarPersonagem(event) {
 
   if (isNaN(busca) || busca > 826) {
     busca = Math.ceil(Math.random() * 823);
-    alert("Not today! lol");
+    alert("Not today!");
     buscador.value = busca;
   }
 
