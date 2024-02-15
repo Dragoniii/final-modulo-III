@@ -1,71 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="img/img.png">
-    <title>The Rick and Morty API</title>
-    <script
-      src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
-      defer
-    ></script>
-    <script src="src/index.js" defer></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Avaliação Final do Módulo</title>
+
     <link rel="stylesheet" href="css/stylesheet.css" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-    <header>
-      <h1 ><img src="img/img.png" alt="Rick and Morty" onclick="window.location.reload()"> The Rick and Morty API <img src="img/img.png" alt="Rick and Morty" onclick="window.location.reload()"></h1>
-      <form onsubmit="selecionarPersonagem(event)">
-        <label for="buscador"></label>
-        <input
-          placeholder="1 to 826"
-          type="search"
-          name="buscador"
-          id="buscador"
-        />
-        <button type="submit" class="btn">ok</button>
-      </form>
-      <div id="paginas">
-        <button onclick="paginaUm()">first</button>
-        <button onclick="diminuirpagina()">&lt;</button>
-        <button id="pagina" onclick="carregaPersonagens(paginaAtual)"></button>
-        <button onclick="aumentarpagina()">&gt;</button>
-        <button onclick="paginaFinal()">last</button>
-
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="img/RICK_MORTY_ICON-01.svg" alt="Logo" />API de Rick and
+          Morty
+        </a>
+        <form class="d-flex">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Pesquise"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success" type="submit">
+            Pesquisar
+          </button>
+        </form>
       </div>
-      <div id="aleatorio">
-        <button onclick="aleatorio()"><img src="img/img.png" alt="Rick and Morty"></button>
-      </div>
-    </header>
+    </nav>
 
-    <main>
-      <div id="cards">
-        <div>
-          <p>
-            First and foremost, I would like to thank you for your interest in
-            the project. <h2>Thank you!</h2>
-          </p>
-          <p>We have 3 search options:</p>
-          <p>
-            In the first option, you can search by the ID of the character you
-            want, which will be displayed followed by the next 3 characters.
-          </p>
-          <p>
-            In the second option, you can start with the first, the last, or an
-            automatically suggested page.
-          </p>
-          <p>In the third option, well, that's a surprise... enjoy.</p>
-          <p>Last but not least, I'm studying programming, not design kkkkk.</p>
-          <div><img src="img/img.png" alt="Rick and Morty"></div>
-        </div>
-        <div>
-        </div>
-      </div>
-    </main>
-
-    <footer>
-      <div id="footer"><img src="img/img.png" alt="Rick and Morty"></div>
-      <p>&copy; 2023 | By Joel Luís Steffen!</p>
-    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
