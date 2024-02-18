@@ -60,16 +60,11 @@
         <div class="row">
           <div class="col-12 text-center my-4">
             <h1 class="fw-bold text-success">Rick and Morty API</h1>
-            <input class="col-6" id="searchBar" placeholder="Search" type="text" />
-            <button id="searchBtn" class="btn btn-success">Search</button>
-            <div class="form-text">Você pode pesquisar por...</div>
+            <input class="col-6" id="buscador" placeholder="Search by ID" type="text" />
+            <button id="botaoBuscador" class="btn btn-success">Search</button>
           </div>
         </div>
-      <div class="row justify-content-center">
-        <p id="totalCharacters" class="fs-4 col col-3">Characters:</p>
-        <p id="totalLocations" class="fs-4 col col-3">Locations:</p>
-        <p id="totalEpisodes" class="fs-4 col col-3">Episodes:</p>
-      </div>
+
     </header>
     <nav>
       <div class="d-flex justify-content-center mt-3">
@@ -85,9 +80,9 @@
     
 
       <main>
-        <div id="cards" class="container mt-5"> <!-- Adiciona margem superior ao container -->
+        <div id="cards" class="container mt-5"> 
           <div class="row">
-            <div class="col text-center"> <!-- Centraliza o texto dentro desta coluna -->
+            <div class="col text-center"> 
               <p class="lead">
                 First and foremost, I would like to thank you for your interest in the project.
               </p>
@@ -112,27 +107,20 @@
     <footer >
       <img class="h-100 w-100" src="./img/fundo.jpeg" alt="Imagem de fundo">
     </footer>
-    <div id= modal>
-        <!-- Modal -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                ...
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Understood</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        </div>
-  
+<!-- Modal -->
+<div class="modal fade" id="personagemModal" tabindex="-1" aria-labelledby="personagemModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="personagemModalLabel">Detalhes do Personagem</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <div class="modal-body">
+        <!-- Os detalhes do personagem serão inseridos aqui -->
+      </div>
+    </div>
+  </div>
+</div>
+
   </body>
 </html>

@@ -6,6 +6,30 @@ const paginacao = document.getElementById("pagina");
 const cards = document.getElementById("cards");
 const buscador = document.getElementById("buscador");
 
+///
+document.addEventListener("DOMContentLoaded", function () {
+  let menuIcon = document.getElementById("menu");
+  menuIcon.addEventListener("click", function () {
+    window.location.reload();
+  });
+});
+
+///
+
+document.addEventListener("DOMContentLoaded", function () {
+  let randomIcon = document.getElementById("random");
+  randomIcon.addEventListener("click", function () {
+    aleatorio();
+  });
+});
+
+///
+
+document.addEventListener("DOMContentLoaded", function () {
+  let botaoBuscador = document.getElementById("botaoBuscador");
+  botaoBuscador.addEventListener("click", selecionarPersonagem);
+});
+
 paginacao.innerHTML = `${paginaAtual}`;
 
 function paginaUm() {
@@ -41,34 +65,22 @@ function aumentarpagina() {
 
 async function selecionarPersonagem(event) {
   event.preventDefault();
-  cards.innerHTML = "";
-  let busca = parseInt(event.srcElement.buscador.value);
+  let busca = parseInt(document.getElementById("buscador").value);
 
   if (isNaN(busca) || busca > 826) {
     busca = Math.ceil(Math.random() * 823);
-    alert("Not today!");
-    buscador.value = busca;
+    document.getElementById("buscador").value = busca;
   }
 
   let url = `/character/${busca},${busca + 1},${busca + 2},${busca + 3}`;
 
-  const resposta = await instance.get(url);
-  const personagens = resposta.data;
-
-  personagens.forEach((personagem) => {
-    cards.innerHTML += `<article>
-      <figure>
-        <img src=${personagem.image} alt="${personagem.name}." />
-      </figure>
-      <aside>
-      <p><h3>ID:</h3>${personagem.id}.</p>
-      <p><h3>Name:</h3>${personagem.name}.</p>
-      <p><h3>Status:</h3>${personagem.status}.</p>
-      <p><h3>Species:</h3>${personagem.species}.</p>
-      <p><h3>Location:</h3>${personagem.location.name}.</p>
-      </aside>
-    </article>`;
-  });
+  try {
+    const resposta = await instance.get(url);
+    const personagens = resposta.data;
+    organizapersonagens(personagens);
+  } catch (error) {
+    console.error("Erro ao buscar personagens: ", error);
+  }
 }
 
 async function aleatorio() {
@@ -116,40 +128,48 @@ function organizapersonagens(personagens) {
   row.className = "row g-3";
 
   personagens.forEach((personagem) => {
+    let nomeDisplay =
+      personagem.name.length > 12
+        ? personagem.name.substring(0, 12) + "..."
+        : personagem.name;
+
     let col = document.createElement("div");
     col.className = "col-sm-6 col-md-4 col-lg-3";
     let card = `
-        <div class="card">
-          <img src="${personagem.image}" class="card-img-top" alt="${personagem.name}">
-          <div class="card-body">
-            <h5 class="card-title">${personagem.name}</h5>
-            <p class="card-text">ID: ${personagem.id}</p>
-            <p class="card-text">Status: ${personagem.status}</p>
-            <p class="card-text">Species: ${personagem.species}</p>
-            <p class="card-text">Location: ${personagem.location.name}</p>
+          <div class="card" style="cursor: pointer;">
+            <img src="${personagem.image}" class="card-img-top" alt="${personagem.name}">
+            <div class="card-body">
+              <h5 class="card-title">${nomeDisplay}</h5> <!-- Usar nomeDisplay aqui -->
+              <p class="card-text">${personagem.species}</p>
+            </div>
           </div>
-        </div>
-      `;
+        `;
     col.innerHTML = card;
     row.appendChild(col);
+
+    col.addEventListener("click", () => {
+      document.getElementById(
+        "personagemModalLabel"
+      ).innerText = `${personagem.name}`;
+      const modalBody = document.querySelector("#personagemModal .modal-body");
+      modalBody.innerHTML = `
+          <div style="text-align: center;">
+            <img src="${personagem.image}" class="img-fluid mb-2" alt="${personagem.name}" style="max-width: 100%; height: auto; max-height: 400px;">
+          </div>
+          <p>ID: ${personagem.id}</p>
+          <p>Status: ${personagem.status}</p>
+          <p>Species: ${personagem.species}</p>
+          <p>Type: ${personagem.type}</p>
+          <p>Gender: ${personagem.gender}</p>
+          <p>Origin: ${personagem.origin.name}</p>
+          <p>Location: ${personagem.location.name}</p>
+        `;
+      var myModal = new bootstrap.Modal(
+        document.getElementById("personagemModal"),
+        {}
+      );
+      myModal.show();
+    });
   });
   cards.appendChild(row);
 }
-
-///////
-
-document.addEventListener("DOMContentLoaded", function () {
-  let menuIcon = document.getElementById("menu");
-  menuIcon.addEventListener("click", function () {
-    window.location.reload();
-  });
-});
-
-///
-
-document.addEventListener('DOMContentLoaded', function() {
-    var randomIcon = document.getElementById('random');
-    randomIcon.addEventListener('click', function() {
-      aleatorio();
-    });
-  });

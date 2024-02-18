@@ -4,6 +4,10 @@
     box-sizing: border-box; 
 }
 
+body {
+    background-color: #bdbdbd; 
+  }  
+
 #img {
     display: flex;
     justify-content: space-between;
@@ -19,3 +23,44 @@
 }
 
 
+main {
+    background-color: #121212;
+    color: #ffffff; 
+  }
+  
+  .modal-content {
+    background-color: #333333; 
+    color: #ffffff; 
+  }
+  
+
+  .btn-close {
+    filter: invert(1);
+  }
+  
+
+.card {
+    background-color: #757575; 
+    color: #ffffff;
+    border: none; 
+  }
+  
+
+  .card-body, .card-title, .card-text {
+    color: #ffffff; 
+  }
+
+
+header {
+
+    color: #000; 
+  }
+  
+  nav {
+
+    color: #000; 
+  }
+
+  .bi, header a, nav a {
+    color: #000; 
+  }
