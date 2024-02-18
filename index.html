@@ -30,26 +30,26 @@
     <script src="./src/index.js" defer></script>
   </head>
   <body>
-    <nav>
+    <header>
       <div class="container">
         <!-- Ícones na mesma linha -->
-        <div class="row align-items-center justify-content-center">
+        <div class="row align-items-center justify-content-center ">
           <!-- Logo Rick & Morty -->
-          <div class="col">
+          <div class="col col-3">
             <img class="mt-2" id="menu" src="./img/RICK_MORTY_ICON-01.svg" alt="Logo para menu de Rick & Morty" />
           </div>
           <!-- Imagem aleatória Rick & Morty -->
-          <div class="col">
+          <div class="col col-3" >
             <img class="mt-2" id="random" src="./img/img.png" alt="Imagem aleatória para menu de Rick & Morty" />
           </div>
           <!-- Ícone GitHub -->
-          <div class="col">
+          <div class="col col-3">
             <a href="https://github.com/Dragoniii" target="_blank">
               <i class="bi bi-github fs-1 text-success" ></i>
             </a>
           </div>
           <!-- Ícone LinkedIn -->
-          <div class="col">
+          <div class="col col-3">
             <a href="https://www.linkedin.com/in/joel-steffen-80560a182/" target="_blank">
               <i class="bi bi-linkedin fs-1 text-success"></i>
             </a>
@@ -61,15 +61,54 @@
           <div class="col-12 text-center my-4">
             <h1 class="fw-bold text-success">Rick and Morty API</h1>
             <input class="col-6" id="searchBar" placeholder="Search" type="text" />
-            <button id="searchBtn" class="btn btn-secondary">Search</button>
+            <button id="searchBtn" class="btn btn-success">Search</button>
             <div class="form-text">Você pode pesquisar por...</div>
           </div>
+        </div>
+      <div class="row justify-content-center">
+        <p id="totalCharacters" class="fs-4 col col-3">Characters:</p>
+        <p id="totalLocations" class="fs-4 col col-3">Locations:</p>
+        <p id="totalEpisodes" class="fs-4 col col-3">Episodes:</p>
+      </div>
+    </header>
+    <nav>
+      <div class="d-flex justify-content-center mt-3">
+        <div id="paginas" class="btn-group" role="group" aria-label="Navegação de páginas">
+          <button type="button" class="btn btn-success" onclick="paginaUm()">first</button>
+          <button type="button" class="btn btn-secondary" onclick="diminuirpagina()">&lt;</button>
+          <button type="button" class="btn btn-primary" id="pagina" onclick="carregaPersonagens(paginaAtual)"></button>
+          <button type="button" class="btn btn-secondary" onclick="aumentarpagina()">&gt;</button>
+          <button type="button" class="btn btn-success" onclick="paginaFinal()">last</button>
         </div>
       </div>
     </nav>
     
-    
-    <main></main>
+
+      <main>
+        <div id="cards" class="container mt-5"> <!-- Adiciona margem superior ao container -->
+          <div class="row">
+            <div class="col text-center"> <!-- Centraliza o texto dentro desta coluna -->
+              <p class="lead">
+                First and foremost, I would like to thank you for your interest in the project.
+              </p>
+              <h2>Thank you!</h2>
+              <p>We have 3 search options:</p>
+              <p>
+                In the first option, you can search by the ID of the character you want, which will be displayed followed by the next 3 characters.
+              </p>
+              <p>
+                In the second option, you can start with the first, the last, or an automatically suggested page.
+              </p>
+              <p>In the third option, well, that's a surprise... enjoy.</p>
+              <p>Last but not least, I'm studying programming, not design kkkkk.</p>
+            </div>
+          </div>
+        </div>
+      </main>
+      
+      
+
+
     <footer >
       <img class="h-100 w-100" src="./img/fundo.jpeg" alt="Imagem de fundo">
     </footer>
