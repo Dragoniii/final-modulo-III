@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 ///
-
 document.addEventListener("DOMContentLoaded", function () {
   let randomIcon = document.getElementById("random");
   randomIcon.addEventListener("click", function () {
@@ -24,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 ///
-
 document.addEventListener("DOMContentLoaded", function () {
   let botaoBuscador = document.getElementById("botaoBuscador");
   botaoBuscador.addEventListener("click", selecionarPersonagem);
@@ -65,21 +63,69 @@ function aumentarpagina() {
 
 async function selecionarPersonagem(event) {
   event.preventDefault();
-  let busca = parseInt(document.getElementById("buscador").value);
+  let busca = document.getElementById("buscador").value;
 
-  if (isNaN(busca) || busca > 826) {
-    busca = Math.ceil(Math.random() * 823);
+  if (!isNaN(busca) && busca > 0 && busca < 827) {
     document.getElementById("buscador").value = busca;
-  }
-
-  let url = `/character/${busca},${busca + 1},${busca + 2},${busca + 3}`;
-
-  try {
-    const resposta = await instance.get(url);
-    const personagens = resposta.data;
-    organizapersonagens(personagens);
-  } catch (error) {
-    console.error("Erro ao buscar personagens: ", error);
+    let url = `/character/${busca},${busca - 0 + 1},${busca - 0 + 2},${
+      busca - 0 + 3
+    }`;
+    try {
+      const resposta = await instance.get(url);
+      const personagens = resposta.data;
+      organizapersonagens(personagens);
+    } catch (error) {
+      console.error("Erro ao buscar personagens: ", error);
+    }
+  } else if (busca === "alive" || busca === "dead") {
+    document.getElementById("buscador").value = busca;
+    let url = `/character/?status=${busca}`;
+    try {
+      const resposta = await instance.get(url);
+      const personagens = resposta.data.results;
+      organizapersonagens(personagens);
+    } catch (error) {
+      console.error("Erro ao buscar personagens: ", error);
+    }
+  } else if (busca === "female" || busca === "male" || busca === "genderless") {
+    document.getElementById("buscador").value = busca;
+    let url = `/character/?gender=${busca}`;
+    try {
+      const resposta = await instance.get(url);
+      const personagens = resposta.data.results;
+      organizapersonagens(personagens);
+    } catch (error) {
+      console.error("Erro ao buscar personagens: ", error);
+    }
+  } else if (
+    busca === "poopybutthole" ||
+    busca === "humanoid" ||
+    busca === "alien" ||
+    busca === "disease" ||
+    busca === "mythological" ||
+    busca === "cronenberg" ||
+    busca === "animal" ||
+    busca === "robot"
+  ) {
+    document.getElementById("buscador").value = busca;
+    let url = `/character/?species=${busca}`;
+    try {
+      const resposta = await instance.get(url);
+      const personagens = resposta.data.results;
+      organizapersonagens(personagens);
+    } catch (error) {
+      console.error("Erro ao buscar personagens: ", error);
+    }
+  } else if (isNaN(busca) && busca !== null) {
+    document.getElementById("buscador").value = busca;
+    let url = `/character/?name=${busca}`;
+    try {
+      const resposta = await instance.get(url);
+      const personagens = resposta.data.results;
+      organizapersonagens(personagens);
+    } catch (error) {
+      console.error("Erro ao buscar personagens: ", error);
+    }
   }
 }
 

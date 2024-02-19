@@ -32,35 +32,28 @@
   <body>
     <header>
       <div class="container">
-        <!-- Ícones na mesma linha -->
         <div class="row align-items-center justify-content-center ">
-          <!-- Logo Rick & Morty -->
           <div class="col col-3">
             <img class="mt-2" id="menu" src="./img/RICK_MORTY_ICON-01.svg" alt="Logo para menu de Rick & Morty" />
           </div>
-          <!-- Imagem aleatória Rick & Morty -->
           <div class="col col-3" >
             <img class="mt-2" id="random" src="./img/img.png" alt="Imagem aleatória para menu de Rick & Morty" />
           </div>
-          <!-- Ícone GitHub -->
           <div class="col col-3">
             <a href="https://github.com/Dragoniii" target="_blank">
               <i class="bi bi-github fs-1 text-success" ></i>
             </a>
           </div>
-          <!-- Ícone LinkedIn -->
           <div class="col col-3">
             <a href="https://www.linkedin.com/in/joel-steffen-80560a182/" target="_blank">
               <i class="bi bi-linkedin fs-1 text-success"></i>
             </a>
           </div>
         </div>
-        
-        <!-- Seção de Pesquisa -->
         <div class="row">
           <div class="col-12 text-center my-4">
             <h1 class="fw-bold text-success">Rick and Morty API</h1>
-            <input class="col-6" id="buscador" placeholder="Search by ID" type="text" />
+            <input class="col-6" id="buscador" placeholder="You can search by ID, name, status, species, or gender" type="text" />
             <button id="botaoBuscador" class="btn btn-success">Search</button>
           </div>
         </div>
@@ -107,20 +100,18 @@
     <footer >
       <img class="h-100 w-100" src="./img/fundo.jpeg" alt="Imagem de fundo">
     </footer>
-<!-- Modal -->
-<div class="modal fade" id="personagemModal" tabindex="-1" aria-labelledby="personagemModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="personagemModalLabel">Detalhes do Personagem</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal fade" id="personagemModal" tabindex="-1" aria-labelledby="personagemModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="personagemModalLabel">Detalhes do Personagem</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="modal-body">
-        <!-- Os detalhes do personagem serão inseridos aqui -->
-      </div>
-    </div>
-  </div>
-</div>
 
   </body>
 </html>
